@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function LoginPage() {
@@ -86,17 +87,23 @@ export default function LoginPage() {
         width: '400px'
       }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+          {/* Campus Image */}
           <div style={{ 
-            width: '60px', 
-            height: '60px', 
-            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+            width: '80px', 
+            height: '80px', 
+            margin: '0 auto 1rem',
+            position: 'relative',
             borderRadius: '50%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            margin: '0 auto 1rem'
+            overflow: 'hidden',
+            backgroundColor: '#f0f0f0'
           }}>
-            <span style={{ fontSize: '30px' }}>📚</span>
+            <Image
+              src="/images/blc.png"
+              alt="BLC Campus Logo"
+              fill
+              style={{ objectFit: 'cover' }}
+              priority
+            />
           </div>
           <h2 style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>BLC Campus</h2>
           <p style={{ color: '#6c757d' }}>Online Class Schedule System</p>
@@ -180,12 +187,6 @@ export default function LoginPage() {
             {loading ? 'Logging in...' : 'Login'}
           </button>
         </form>
-        
-        <div style={{ textAlign: 'center', marginTop: '1rem' }}>
-          <small style={{ color: '#6c757d' }}>
-            Demo Credentials: admin / admin123
-          </small>
-        </div>
       </div>
     </div>
   );
