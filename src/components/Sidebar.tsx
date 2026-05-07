@@ -158,7 +158,9 @@ export default function Sidebar({ activeTab, setActiveTab, isOpen, onToggle }: S
           borderTop: '1px solid rgba(255,255,255,0.1)',
           textAlign: 'center',
         }}>
-          <small style={{ color: 'rgba(255,255,255,0.5)' }}>© 2024 BLC Campus</small>
+          <small style={{ color: 'rgba(255,255,255,0.5)' }}>
+            © {new Date().getFullYear()} BLC Campus
+          </small>
           <br />
           <small style={{ color: 'rgba(255,255,255,0.5)' }}>Version 1.0.0</small>
         </div>
